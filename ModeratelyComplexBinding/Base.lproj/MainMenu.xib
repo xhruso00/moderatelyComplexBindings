@@ -676,18 +676,18 @@
         <window title="ModeratelyComplexBinding" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="255" height="249"/>
+            <rect key="contentRect" x="335" y="390" width="280" height="258"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="255" height="249"/>
+                <rect key="frame" x="0.0" y="0.0" width="280" height="258"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cS-HK-Zvy">
-                        <rect key="frame" x="29" y="192" width="192" height="26"/>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8cS-HK-Zvy">
+                        <rect key="frame" x="29" y="201" width="192" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Iey-Da-dDe" id="hVv-IC-9TS">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="JKt-bk-yQG">
                                 <items>
                                     <menuItem title="Item 1" state="on" id="Iey-Da-dDe"/>
@@ -698,14 +698,15 @@
                         </popUpButtonCell>
                         <connections>
                             <binding destination="IiO-Lp-A0o" name="contentValues" keyPath="arrangedObjects.name" id="nsz-3U-j3q"/>
+                            <binding destination="IiO-Lp-A0o" name="selectedIndex" keyPath="selectionIndex" previousBinding="nsz-3U-j3q" id="MjS-I6-SSe"/>
                         </connections>
                     </popUpButton>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b8h-Hb-gA5">
-                        <rect key="frame" x="29" y="82" width="192" height="26"/>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b8h-Hb-gA5">
+                        <rect key="frame" x="29" y="149" width="192" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="NaH-eE-kWS" id="8HC-EW-U4L">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="krE-Kl-GF3">
                                 <items>
                                     <menuItem title="Item 1" state="on" id="NaH-eE-kWS"/>
@@ -719,7 +720,67 @@
                             <binding destination="IiO-Lp-A0o" name="selectedObject" keyPath="selection.selectedWeapon" previousBinding="EDt-hd-Gtz" id="Sy1-hK-1U4"/>
                         </connections>
                     </popUpButton>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCT-r9-L3q">
+                        <rect key="frame" x="20" y="20" width="240" height="112"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" id="S5D-cP-YrN">
+                            <rect key="frame" x="1" y="17" width="238" height="94"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="D1A-8f-lzU" id="nGy-AE-RZG">
+                                    <rect key="frame" x="0.0" y="0.0" width="238" height="94"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <size key="intercellSpacing" width="3" height="2"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                    <tableColumns>
+                                        <tableColumn width="235" minWidth="40" maxWidth="1000" id="9xl-it-01i">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="8mt-WH-4BU">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <connections>
+                                                <binding destination="IiO-Lp-A0o" name="value" keyPath="arrangedObjects.name" id="ipB-OB-KJu"/>
+                                            </connections>
+                                        </tableColumn>
+                                    </tableColumns>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="OMD-FN-50j">
+                            <rect key="frame" x="1" y="1" width="0.0" height="16"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="N5F-6E-BGU">
+                            <rect key="frame" x="-15" y="17" width="16" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <tableHeaderView key="headerView" id="D1A-8f-lzU">
+                            <rect key="frame" x="0.0" y="0.0" width="238" height="17"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </tableHeaderView>
+                    </scrollView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="GCT-r9-L3q" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="126" id="Bqv-68-Uq4"/>
+                    <constraint firstAttribute="trailing" secondItem="b8h-Hb-gA5" secondAttribute="trailing" constant="62" id="GGz-Ry-yBa"/>
+                    <constraint firstItem="b8h-Hb-gA5" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="31" id="GSR-1K-EmQ"/>
+                    <constraint firstItem="GCT-r9-L3q" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="Thr-L9-Qgu"/>
+                    <constraint firstAttribute="trailing" secondItem="GCT-r9-L3q" secondAttribute="trailing" constant="20" symbolic="YES" id="ZCt-XF-ST9"/>
+                    <constraint firstItem="GCT-r9-L3q" firstAttribute="top" secondItem="b8h-Hb-gA5" secondAttribute="bottom" constant="20" id="aaa-Rh-q5m"/>
+                    <constraint firstItem="b8h-Hb-gA5" firstAttribute="top" secondItem="8cS-HK-Zvy" secondAttribute="bottom" constant="31" id="cKH-2T-arA"/>
+                    <constraint firstAttribute="bottom" secondItem="GCT-r9-L3q" secondAttribute="bottom" constant="20" id="dPj-PI-w2u"/>
+                    <constraint firstItem="b8h-Hb-gA5" firstAttribute="leading" secondItem="8cS-HK-Zvy" secondAttribute="leading" id="nyY-HD-oy9"/>
+                    <constraint firstItem="b8h-Hb-gA5" firstAttribute="trailing" secondItem="8cS-HK-Zvy" secondAttribute="trailing" id="t4E-HS-U4R"/>
+                </constraints>
             </view>
             <connections>
                 <binding destination="IiO-Lp-A0o" name="title" keyPath="selection.name" id="2Q1-dU-njC"/>
