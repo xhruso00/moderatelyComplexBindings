@@ -18,6 +18,7 @@
 		D29D16AF19B615A800D3EBB8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29D168E19B615A800D3EBB8 /* Cocoa.framework */; };
 		D29D16B719B615A800D3EBB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D29D16B519B615A800D3EBB8 /* InfoPlist.strings */; };
 		D29D16B919B615A800D3EBB8 /* ModeratelyComplexBindingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29D16B819B615A800D3EBB8 /* ModeratelyComplexBindingTests.m */; };
+		D29D16C419B615C600D3EBB8 /* Combatant.m in Sources */ = {isa = PBXBuildFile; fileRef = D29D16C319B615C600D3EBB8 /* Combatant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		D29D16B419B615A800D3EBB8 /* ModeratelyComplexBindingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ModeratelyComplexBindingTests-Info.plist"; sourceTree = "<group>"; };
 		D29D16B619B615A800D3EBB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D29D16B819B615A800D3EBB8 /* ModeratelyComplexBindingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModeratelyComplexBindingTests.m; sourceTree = "<group>"; };
+		D29D16C219B615C600D3EBB8 /* Combatant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Combatant.h; sourceTree = "<group>"; };
+		D29D16C319B615C600D3EBB8 /* Combatant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Combatant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 			children = (
 				D29D16A019B615A800D3EBB8 /* AppDelegate.h */,
 				D29D16A119B615A800D3EBB8 /* AppDelegate.m */,
+				D29D16C219B615C600D3EBB8 /* Combatant.h */,
+				D29D16C319B615C600D3EBB8 /* Combatant.m */,
 				D29D16A319B615A800D3EBB8 /* MainMenu.xib */,
 				D29D16A619B615A800D3EBB8 /* Images.xcassets */,
 				D29D169519B615A800D3EBB8 /* Supporting Files */,
@@ -254,6 +259,7 @@
 			files = (
 				D29D16A219B615A800D3EBB8 /* AppDelegate.m in Sources */,
 				D29D169B19B615A800D3EBB8 /* main.m in Sources */,
+				D29D16C419B615C600D3EBB8 /* Combatant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

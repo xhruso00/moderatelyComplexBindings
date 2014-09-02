@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -13,10 +13,17 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="combatants" destination="IiO-Lp-A0o" id="vil-KH-T4J"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <arrayController objectClassName="NSObject" id="IiO-Lp-A0o" userLabel="Combatants"/>
+        <arrayController objectClassName="NSObject" id="eE3-v5-zwr" userLabel="Weapons">
+            <connections>
+                <binding destination="IiO-Lp-A0o" name="contentArray" keyPath="selection.weapons" id="2lO-lC-B08"/>
+            </connections>
+        </arrayController>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="ModeratelyComplexBinding" id="1Xt-HY-uBw">
@@ -669,12 +676,54 @@
         <window title="ModeratelyComplexBinding" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="contentRect" x="335" y="390" width="255" height="249"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="255" height="249"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cS-HK-Zvy">
+                        <rect key="frame" x="29" y="192" width="192" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Iey-Da-dDe" id="hVv-IC-9TS">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" title="OtherViews" id="JKt-bk-yQG">
+                                <items>
+                                    <menuItem title="Item 1" state="on" id="Iey-Da-dDe"/>
+                                    <menuItem title="Item 2" id="O5h-Jh-dz1"/>
+                                    <menuItem title="Item 3" id="Tup-WE-Re2"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="IiO-Lp-A0o" name="contentValues" keyPath="arrangedObjects.name" id="nsz-3U-j3q"/>
+                        </connections>
+                    </popUpButton>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b8h-Hb-gA5">
+                        <rect key="frame" x="29" y="82" width="192" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="NaH-eE-kWS" id="8HC-EW-U4L">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" title="OtherViews" id="krE-Kl-GF3">
+                                <items>
+                                    <menuItem title="Item 1" state="on" id="NaH-eE-kWS"/>
+                                    <menuItem title="Item 2" id="K7g-PO-qyp"/>
+                                    <menuItem title="Item 3" id="edh-L8-GB7"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="eE3-v5-zwr" name="content" keyPath="arrangedObjects" id="EDt-hd-Gtz"/>
+                            <binding destination="IiO-Lp-A0o" name="selectedObject" keyPath="selection.selectedWeapon" previousBinding="EDt-hd-Gtz" id="Sy1-hK-1U4"/>
+                        </connections>
+                    </popUpButton>
+                </subviews>
             </view>
+            <connections>
+                <binding destination="IiO-Lp-A0o" name="title" keyPath="selection.name" id="2Q1-dU-njC"/>
+            </connections>
         </window>
     </objects>
 </document>

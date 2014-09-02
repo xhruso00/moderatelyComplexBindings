@@ -10,4 +10,11 @@
 
 @interface Combatant : NSObject
 
+
+@property (nonatomic, strong) NSString *name;
+@property id selectedWeapon;
+@property NSArray *weapons;
+
+- (instancetype)initWithName:(NSString *)aName;
+
 @end
