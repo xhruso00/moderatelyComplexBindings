@@ -5,3 +5,6 @@ Moderately Complex bindings
 
 As written at:
 https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CocoaBindings/Concepts/WhatAreBindings.html
+
+Bind selectionIndex of NSPopupButton to NSArrayController. This is what
+I missed between the lines. 
